@@ -1,0 +1,7 @@
+ng new AngularDemo
+
+cd angularDemo
+ng serve -o     // to launch
+
+cd              // to src / app 
+ng g c payment-Details      //to generate component

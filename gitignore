@@ -1,0 +1,29 @@
+# ---- .NET Core ----
+bin/
+obj/
+*.log
+*.db
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# NuGet packages
+*.nupkg
+packages/
+
+# ---- Angular ----
+node_modules/
+dist/
+*.tgz
+*.env
+.angular/
+.angular-cache/
+
+# ---- IDEs ----
+.vscode/
+.idea/
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db

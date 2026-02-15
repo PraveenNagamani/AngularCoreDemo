@@ -1,0 +1,9 @@
+src
+    app
+        payment-Details
+            payment-Details.ts
+            payment-Detail-form
+                payment-Detail-form.ts
+        shared
+            payment-Detail.service.ts
+            payment-Detail.model.ts

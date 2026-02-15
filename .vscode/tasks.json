@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "build p:\\Work\\Visual Code Projects\\AngularCoreDemo\\CoreDemo\\Program.cs",
+			"file": "p:\\Work\\Visual Code Projects\\AngularCoreDemo\\CoreDemo\\Program.cs",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "dotnet: build p:\\Work\\Visual Code Projects\\AngularCoreDemo\\CoreDemo\\Program.cs"
+		}
+	]
+}
+
