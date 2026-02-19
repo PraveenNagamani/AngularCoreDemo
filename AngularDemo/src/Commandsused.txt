@@ -5,3 +5,6 @@ ng serve -o     // to launch
 
 cd              // to src / app 
 ng g c payment-Details      //to generate component
+ng g s Shared/payment-Detail    // to generate service file in shared folder
+
+ng g cl Shared/payment-Detail --type=model  // to generate model class
