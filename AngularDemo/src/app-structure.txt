@@ -5,5 +5,5 @@ src
             payment-Detail-form
                 payment-Detail-form.ts
         shared
-            payment-Detail.service.ts
+            payment-Detail.service.ts   // now service is removed
             payment-Detail.model.ts

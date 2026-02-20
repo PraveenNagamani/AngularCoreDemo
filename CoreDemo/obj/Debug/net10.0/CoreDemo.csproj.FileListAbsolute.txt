@@ -31,3 +31,4 @@ P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\refint\C
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo.pdb
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo.genruntimeconfig.cache
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\ref\CoreDemo.dll
+P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo.sourcelink.json
