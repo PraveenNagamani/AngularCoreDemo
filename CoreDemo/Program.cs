@@ -2,7 +2,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddControllers(); 
 builder.Services.AddOpenApi();
+try
+{
+    builder.Services.AddTransient<ICardRepository,cardRepository>();
+    builder.Services.AddTransient<IPaymentRepository, PayRepository>();
+builder.Services.AddTransient<IPaymentDetails,PaymentDetails>();
+
+}
+catch(Exception e)
+{
+    Console.WriteLine($"Error registering service: {e.Message}");
+}
 
 //builder.Services.AddHttpsRedirection(options => { options.HttpsPort = 5001; }); 
 var app = builder.Build();
@@ -11,6 +23,15 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseExceptionHandler( errorApp => 
+    { 
+        errorApp.Run(async context => 
+        { 
+            context.Response.StatusCode = 500; 
+            await context.Response.WriteAsync("An unexpected error occurred."); 
+        }
+        );
+    });
 }
 
 //app.UseHttpsRedirection();
@@ -36,6 +57,7 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+app.MapControllers(); 
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)

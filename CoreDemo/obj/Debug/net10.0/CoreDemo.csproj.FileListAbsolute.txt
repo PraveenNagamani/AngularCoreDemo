@@ -16,6 +16,7 @@ P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo.csproj.CoreCompileInputs.cache
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo.MvcApplicationPartsAssemblyInfo.cs
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo.MvcApplicationPartsAssemblyInfo.cache
+P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo.sourcelink.json
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\rjimswa.dswa.cache.json
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
@@ -31,4 +32,3 @@ P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\refint\C
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo.pdb
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo.genruntimeconfig.cache
 P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\ref\CoreDemo.dll
-P:\Work\Visual Code Projects\AngularCoreDemo\CoreDemo\obj\Debug\net10.0\CoreDemo.sourcelink.json
