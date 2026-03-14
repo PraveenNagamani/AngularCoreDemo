@@ -14,15 +14,16 @@ public class PaymentDetailsController : ControllerBase
         this.cardRepository = cardRepository;
     }
     [HttpPost]
-    public async Task<IActionResult>  ProcessPayment(PaymentDetails paymentDetails)
+    public async Task<IActionResult>  ProcessPayment([FromBody] PaymentDetails paymentDetails)
     {
-        // if (paymentDetails.valid)
-        // {
-            
-        // }
+        if(!ModelState.IsValid){
+            return BadRequest(ModelState);
+        }
        
         string errmsg=string.Empty;
         paymentRepository.Pay(paymentDetails,ref errmsg);
+
+        if (!string.IsNullOrEmpty(errmsg)) { return new JsonResult(new { status = false, error = errmsg }); }
        
        CardDetails cardDetails =  paymentDetails.cardDetails;
        bool checkcaredavail =  cardRepository.GetCardDetails(cardDetails);
@@ -35,10 +36,11 @@ public class PaymentDetailsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetPaymentDetails(int cardNumber)
+    public async Task<IActionResult> GetPaymentDetails(string cardNumber)
     {
-
-        return new JsonResult( new {});
+        CardDetails _cardDetails =  cardRepository.GetCardDetails(cardNumber);
+        var _paymentDetails =  paymentRepository.GetPaymentDetails(_cardDetails);
+       return new JsonResult( new { _paymentDetails });
         
     }
 

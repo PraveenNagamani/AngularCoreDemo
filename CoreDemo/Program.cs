@@ -4,11 +4,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddControllers(); 
 builder.Services.AddOpenApi();
-try
+try 
 {
-    builder.Services.AddTransient<ICardRepository,cardRepository>();
-    builder.Services.AddTransient<IPaymentRepository, PayRepository>();
-builder.Services.AddTransient<IPaymentDetails,PaymentDetails>();
+    builder.Services.AddSingleton<ICardRepository,cardRepository>();
+    builder.Services.AddSingleton<IPaymentRepository, PayRepository>();
+    builder.Services.AddSingleton<IPaymentDetails,PaymentDetails>();
 
 }
 catch(Exception e)
@@ -34,7 +34,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 var summaries = new[]
 {

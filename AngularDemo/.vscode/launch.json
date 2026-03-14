@@ -18,15 +18,17 @@
       "request": "launch",
       "preLaunchTask": "npm: test",
       "url": "http://localhost:9876/debug.html"
-    },
+    }
+    ,
     {
       "name": "Launch .NET Core",
       "type": "coreclr",
       "request": "launch",
-      "program": "${workspaceFolder}/CoreDemo/bin/Debug/net10.0/CoreDemo.dll",
+      "program": "${workspaceFolder}/../CoreDemo/bin/Debug/net10.0/CoreDemo.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/CoreDemo",
+      "cwd": "${workspaceFolder}/../CoreDemo",
       "stopAtEntry": false
+      //, "url" : "http://localhost:5231/"
     }
   ],
   "compounds": [

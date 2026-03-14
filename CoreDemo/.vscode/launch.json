@@ -9,9 +9,9 @@
             "program": "dotnet",
             "args": [
                 "exec",
-                "${workspaceFolder}/CoreDemo/bin/Debug/net10.0/CoreDemo.dll"
+                "${workspaceFolder}/bin/Debug/net10.0/CoreDemo.dll"
             ],
-            "cwd": "${workspaceFolder}/CoreDemo"
+            "cwd": "${workspaceFolder}"
         },
                 
         {
@@ -19,12 +19,12 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/CoreDemo/bin/Debug/net10.0/CoreDemo.dll",
+            "program": "${workspaceFolder}/bin/Debug/net10.0/CoreDemo.dll",
             "args": [
                 "exec", 
-                "${workspaceFolder}/CoreDemo/bin/Debug/net10.0/CoreDemo.dll"
+                "${workspaceFolder}/bin/Debug/net10.0/CoreDemo.dll"
             ],
-            "cwd": "${workspaceFolder}/CoreDemo",
+            "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",

@@ -5,12 +5,13 @@ public interface ICardRepository
 {
     public bool AddCardDetails(CardDetails cardDetails);
     public bool GetCardDetails(CardDetails cardDetails);
+    public CardDetails GetCardDetails(string CardNumber);
 }
 public class CardDetails
 {
     [Required]
     [RegularExpression(@"^\d{16}$", ErrorMessage = "Card number must be exactly 16 digits.")]
-    public int CardNumber { get; set; }
+    public string CardNumber { get; set; }
 
     [Required]
     [StringLength(20, ErrorMessage = "Card type must be either 'Debit Card' or 'Credit Card'")]
@@ -25,9 +26,6 @@ public class CardDetails
 
 }
 
-
-
-
 public class cardRepository : ICardRepository
 {
     private readonly ILogger<cardRepository> _logger; 
@@ -36,23 +34,26 @@ public class cardRepository : ICardRepository
         _logger = logger; 
     }
 
-    public Dictionary<int,CardDetails> cardDictionary = new Dictionary<int,CardDetails> ();
+    public Dictionary<string,CardDetails> cardDictionary = new Dictionary<string,CardDetails> ();
 
     public bool AddCardDetails(CardDetails cardDetails)
     {
-        //CardNumber = cardNumber;
-        //CardType = cardType;
-        //NameonCard = nameonCard;
-        //ExpiryDate = expiryDate;
-        //CVV = cvv;
+        
         cardDictionary.Add(cardDetails.CardNumber, cardDetails);
         return true;
     }
 
-    public bool GetCardDetails(CardDetails cardDetails)
+    public bool  GetCardDetails(CardDetails cardDetails)
     {
         return cardDictionary.ContainsKey(cardDetails.CardNumber);
         
     }
+
+    public CardDetails GetCardDetails(string CardNumber)
+    {
+        return cardDictionary.ContainsKey(CardNumber) ? cardDictionary[CardNumber] : null;
+        
+    }
+
 }
 
