@@ -36,12 +36,12 @@ public class PaymentDetailsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetPaymentDetails(string cardNumber)
+    public async Task<ActionResult<List<PaymentDetails>>> GetPaymentDetails(string cardNumber)
     {
         CardDetails _cardDetails =  cardRepository.GetCardDetails(cardNumber);
-        var _paymentDetails =  paymentRepository.GetPaymentDetails(_cardDetails);
-       return new JsonResult( new { _paymentDetails });
-        
+        var paymentDetails =  paymentRepository.GetPaymentDetails(_cardDetails);
+       //return new JsonResult( new { paymentDetails });
+       return Ok(paymentDetails);        
     }
 
   

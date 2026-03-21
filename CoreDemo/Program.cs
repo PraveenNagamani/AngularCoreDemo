@@ -23,6 +23,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+
+    app.UseCors(builder =>
+    builder.WithOrigins("http://localhost:4200")
+           .AllowAnyHeader()
+           .AllowAnyMethod());
+
     app.UseExceptionHandler( errorApp => 
     { 
         errorApp.Run(async context => 
@@ -33,8 +39,12 @@ if (app.Environment.IsDevelopment())
         );
     });
 }
+else
+{
+    app.UseHttpsRedirection();    
+}
 
-app.UseHttpsRedirection();
+
 
 var summaries = new[]
 {
@@ -42,6 +52,7 @@ var summaries = new[]
 };
 
 app.MapGet("/", () => "Hello from ASP.NET Core!");
+
 
 app.MapGet("/weatherforecast", () =>
 {

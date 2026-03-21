@@ -1,28 +1,38 @@
 import { Injectable , Inject, inject } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { IPaymentModal } from '../payment-details/payment-details';
-import { Observable } from 'rxjs';
+import { throwError,catchError, Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
 export class PaymentDetail {
   constructor() {}
-  private http =  Inject(HttpClient) as HttpClient ;
-  private httpresp = Inject(HttpResponse) as HttpResponse<IPaymentModal>;
+  private http =  inject(HttpClient) as HttpClient ;
+  
   url: string = environment.baseurl;
   getPaymentDetails(cardNumber : string) : Observable<IPaymentModal[]> {
      
-    //try{
-      return this.http.get<IPaymentModal[]>(this.url + '/paymentdetails');
-    // }catch{
-
-    // }
-    // return null;
+     const params = new HttpParams().set('CardNumber' , cardNumber);
+     
+      return this.http.get<IPaymentModal[]>(this.url + '/paymentdetails',{params});
+    
   }
 
   SendPayment(payDetails : IPaymentModal ) : Observable<any> {
-    return this.http.post<IPaymentModal[]>(this.url + '/paymentdetails',payDetails);
+    console.log(JSON.stringify(payDetails));
+    return this.http.post<any>(this.url + '/paymentdetails', payDetails).pipe(
+    catchError((err) => {
+      if (err.status === 400) {
+        console.error('Validation error:', err.error);
+      } else {
+        console.error('Unexpected error:', err);
+      }
+      return throwError(() => err); // rethrow so caller can handle
+    })
+  );
+
   }
 
 }

@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\AngularDemo",
+    "\\AngularDemo\\.angular",
+    "\\AngularDemo\\.angular\\cache",
+    "\\AngularDemo\\.angular\\cache\\21.1.4",
+    "\\AngularDemo\\.angular\\cache\\21.1.4\\AngularDemo",
+    "\\AngularDemo\\.angular\\cache\\21.1.4\\AngularDemo\\vite",
+    "\\AngularDemo\\.angular\\cache\\21.1.4\\AngularDemo\\vite\\deps_ssr",
     "\\AngularDemo\\dist\\AngularDemo",
     "\\CoreDemo"
   ],
